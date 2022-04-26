@@ -1,7 +1,0 @@
-FROM python:3.10:latest
-
-ADD PythonFiles/a .
-
-RUN pip install numpy
-
-CMD [ "python", "./PythonFiles/main.py" ]
