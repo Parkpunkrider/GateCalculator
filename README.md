@@ -9,6 +9,7 @@ The calculator works as a CLI based application and is deployed via docker.
 Just pull the [image](https://hub.docker.com/r/parkpunkrider/numpy-gate-calculator) from Dockerhub 
 by running it with "docker run -it --rm parkpunkrider/numpy-gate-calculator".
 Then type python main.py in the console.
+To exit the program press ctrl + c and then type exit to shutdown and delete the docker container.
 
 
 #### What can it do?
