@@ -23,6 +23,24 @@ def passiveSingleCurrent():
     print("The current of the gate is ")
     print(calc)
 
+def passiveDualConductance():
+    amp1 = input("Please enter the first gate current.")
+    amp2 = input("Please enter the second gate current.")
+    vol1 = input("Please enter the first gate voltage.")
+    vol2 = input("Please enter the second gate voltage.")
+    calc = form.calcPassiveDualCon(amp1,amp2,vol1,vol2)
+    print("The resistances of the gate are ")
+    print(calc)
+
+def passiveDualResistance():
+    amp1 = input("Please enter the first gate current.")
+    amp2 = input("Please enter the second gate current.")
+    vol1 = input("Please enter the first gate voltage.")
+    vol2 = input("Please enter the second gate voltage.")
+    calc = form.calcPassiveDualRes(amp1,amp2,vol1,vol2)
+    print("The resistances of the gate are ")
+    print(calc)
+
 def passiveDualVoltage():
     amp1 = input("Please enter the first gate current.")
     amp2 = input("Please enter the second gate current.")
@@ -44,6 +62,7 @@ def passiveDualCurrent():
     calc = form.calcPassiveDualAmp(volt1,volt2,z1,z2,z3,z4)
     print("The currents of the gate are ")
     print(calc)
+
 
 def activeSingleResistance():
     volt = input("Please enter the gate voltage.")
@@ -111,7 +130,11 @@ def activeSingleGate():
 
 
 def passiveDualGate():
-    userInput = input("What values do you want to calculate? u/i")
+    userInput = input("What values do you want to calculate? c/r/u/i")
+    if userInput == "c":
+        passiveDualConductance()
+    if userInput == "r":
+        passiveDualResistance()
     if userInput == "u":
         passiveDualVoltage()
     if userInput == "i":
