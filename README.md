@@ -2,7 +2,7 @@
 ### Calculator for electronical gates written with Python NumPy
 
 #### Disclaimer:
-Only for Gates which act purely as resistors as of now (so no phase shift). Active Gates are not implemented properly.
+Only for Gates which act purely as resistors as of now (so no phase shift).
 
 #### How to use it
 The calculator works as a CLI based application and is deployed via docker.
@@ -13,10 +13,13 @@ To exit the program press ctrl + c and then type exit to shutdown and delete the
 
 
 #### What can it do?
-You can calculate different Values for passive and active single gates and passive and active dual gates.
+You can calculate different Values for passive and passive dual gates.
+Aswell as the duality for linear active single gates.
 First the cli asks you to choose which kind of gate you want to calculate: 
-passive single (psg), active single (asg), passive dual(pdg) or active dual (adg).
-Next you have to enter the parameters as asked (c for conductivity, r for resistance, i for current and u for voltage)
+passive single (psg), active single (asg) or passive dual(pdg).
+Next you have to enter the parameters as asked (c for conductivity, r for resistance, i for current and u for voltage).
+Or on the linear active single gate the parameters for duality so either voltage and inner resistance for "voltage source to current source"(vtc) 
+or current and inner resistance for "current source to voltage source"(ctv).
 
 #### Dual Gate
 For Passive Dual Gates conductivity, resistance, voltage and current can be calculated, you have to enter the resistance matrix for the latter two.

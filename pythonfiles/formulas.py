@@ -21,20 +21,16 @@ class formulas(object):
 
     #ActiveSingleMethods
     @staticmethod
-    def calcActiveSingleRes(volt, amp):
-        volt = np.double(volt)
-        amp = np.double(amp)
-        return np.divide(volt,amp)
-    @staticmethod
-    def calcActiveSingleVol(res, amp):
+    def calcActiveSingleVolToCurr(volt0, res):
+        volt0 = np.double(volt0)
         res = np.double(res)
-        amp = np.double(amp)
-        return np.multiply(res,amp)
+        return np.divide(volt0,res)
     @staticmethod
-    def calcActiveSingleAmp(volt, res):
-        volt = np.double(volt)
+    def calcActiveSingleCurrToVol(ampShort, res):
+        ampShort = np.double(ampShort)
         res = np.double(res)
-        return np.divide(volt,res)
+        con = np.divide(1,res)
+        return np.divide(ampShort,con)
 
     #PassiveDualMethods
     @staticmethod
@@ -90,29 +86,29 @@ class formulas(object):
         a = np.dot(z,v)
         return a
         
-    #AcitveDualMethods
-    @staticmethod
-    def calcActiveDualVolt(amp1, amp2, z1,z2,z3,z4):
-        amp1 = np.double(amp1)
-        amp2 = np.double(amp2)
-        z1 = np.double(z1)
-        z2 = np.double(z2)
-        z3 = np.double(z3)
-        z4 = np.double(z4)
-        a = np.array([amp1,amp2])
-        z = np.array([[z1,z2],[z3,z4]])
-        v = np.dot(a,z)
-        return v
+    # #AcitveDualMethods
+    # @staticmethod
+    # def calcActiveDualVolt(amp1, amp2, z1,z2,z3,z4):
+    #     amp1 = np.double(amp1)
+    #     amp2 = np.double(amp2)
+    #     z1 = np.double(z1)
+    #     z2 = np.double(z2)
+    #     z3 = np.double(z3)
+    #     z4 = np.double(z4)
+    #     a = np.array([amp1,amp2])
+    #     z = np.array([[z1,z2],[z3,z4]])
+    #     v = np.dot(a,z)
+    #     return v
         
-    @staticmethod
-    def calcActiveDualAmp(volt1, volt2, z1,z2,z3,z4):
-        volt1 = np.double(volt1)
-        volt2 = np.double(volt2)
-        z1 = np.double(z1)
-        z2 = np.double(z2)
-        z3 = np.double(z3)
-        z4 = np.double(z4)
-        z = np.array([[z1,z2],[z3,z4]])
-        v = np.array([volt1,volt2])
-        a = np.dot(z,v)
-        return a    
+    # @staticmethod
+    # def calcActiveDualAmp(volt1, volt2, z1,z2,z3,z4):
+    #     volt1 = np.double(volt1)
+    #     volt2 = np.double(volt2)
+    #     z1 = np.double(z1)
+    #     z2 = np.double(z2)
+    #     z3 = np.double(z3)
+    #     z4 = np.double(z4)
+    #     z = np.array([[z1,z2],[z3,z4]])
+    #     v = np.array([volt1,volt2])
+    #     a = np.dot(z,v)
+    #     return a    
